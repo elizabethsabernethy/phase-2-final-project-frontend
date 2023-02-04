@@ -13,5 +13,29 @@ div.book-cover{
  background-color:blanchedalmond;
  width: 250px;
  height: 350px;
+ position: relative;
  text-align: center;
+}
+
+.title{
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: 15px
+}
+
+.author{
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  margin: 15px
+}
+
+.year{
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
 }
