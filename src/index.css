@@ -10,7 +10,8 @@ div.book{
 }
 
 div.book-cover{
- background-color:blanchedalmond;
+ background-color:rgb(36, 20, 7);
+ color:antiquewhite;
  width: 250px;
  height: 350px;
  position: relative;
@@ -18,7 +19,7 @@ div.book-cover{
 }
 
 div.open-book{
-  background-color:blanchedalmond;
+  background-color:rgb(255, 250, 244);
   width: 250px;
   height: 350px;
   position: relative;
@@ -46,4 +47,9 @@ div.open-book{
   bottom: 30px;
   left: 0;
   right: 0;
+}
+
+.summary{
+  font-size: medium;
+  margin: 10px;
 }
