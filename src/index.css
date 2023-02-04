@@ -17,6 +17,14 @@ div.book-cover{
  text-align: center;
 }
 
+div.open-book{
+  background-color:blanchedalmond;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  text-align: center;
+ }
+
 .title{
   position: absolute;
   top: 60px;
