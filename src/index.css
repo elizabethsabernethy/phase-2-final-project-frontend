@@ -1,10 +1,17 @@
 body{
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 120px;
+  margin-right: 120px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+div.book{
+  display: inline-grid;
+  margin: 15px;
 }
 
 div.book-cover{
  background-color:blanchedalmond;
- width: 300px;
+ width: 250px;
+ height: 350px;
+ text-align: center;
 }
