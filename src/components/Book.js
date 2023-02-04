@@ -11,17 +11,18 @@ function Book({book}){
     return(
         <div className="book">
             <div className="book-cover" onClick={clickBook}>
-                <h2>{book.title} - {book.year}</h2>
-                <h3>{book.author}</h3>
+                <h2 className="title">{book.title}</h2>
+                <h3 className="author">{book.author}</h3>
+                <h3 className="year">{book.year}</h3>
             </div>
             <div className="open-book" hidden={hideDetails}>
-                <p>{book.summary}</p>
+                <p className="summary">{book.summary}</p>
                 <ul>
                     {book.themes.map((theme)=>{
-                        return <li key={theme}>{theme}</li>
+                        return <li className="theme" key={theme}>{theme}</li>
                     })}
                 </ul>
-                <h4>Likes: {book.likes}</h4>
+                <h4 className="likes">Likes: {book.likes}</h4>
                 <button>Like Book</button>  <button>Unlike Book</button> 
             </div>
            
