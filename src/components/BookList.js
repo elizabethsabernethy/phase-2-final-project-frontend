@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Book from "./Book";
 
-function BookList(){
+function BookList({chooseBook}){
 
     const[books, setBooks] = useState([])
-    const[chosenBook, setChosenBook] = useState({})
-
-    function chooseBook(book){
-        setChosenBook(book)
-    }
 
     useEffect(()=>{
         fetch('http://localhost:3000/books')
