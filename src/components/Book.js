@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-function Book({book, chooseBook}){
+function Book({book}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
     function clickBook(){
         setHideDetails((hideDetails) => !hideDetails)
-        chooseBook(book)
     }
 
     return(

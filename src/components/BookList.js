@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Book from "./Book";
 
-function BookList({chooseBook}){
+function BookList(){
 
     const[books, setBooks] = useState([])
 
@@ -14,7 +14,7 @@ function BookList({chooseBook}){
     return(
         <div>
             {books.map((book)=>{
-                return <Book key={book.id} chooseBook={chooseBook} book={book}/>
+                return <Book key={book.id} book={book}/>
             })}
         </div>
     )
