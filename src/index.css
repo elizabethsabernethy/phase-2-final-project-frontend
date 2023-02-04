@@ -3,3 +3,8 @@ body{
   margin-right: 150px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+div.book-cover{
+ background-color:blanchedalmond;
+ width: 300px;
+}
