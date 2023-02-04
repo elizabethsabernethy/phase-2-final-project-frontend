@@ -8,9 +8,8 @@ function Book({book}){
             <h3>{book.author}</h3>
             <p>{book.summary}</p>
             <ul>
-                <lh>Themes</lh>
                 {book.themes.map((theme)=>{
-                    return <li>{theme}</li>
+                    return <li key={theme}>{theme}</li>
                 })}
             </ul>
             <h4>Likes: {book.likes}</h4>
