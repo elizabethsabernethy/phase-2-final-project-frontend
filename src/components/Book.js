@@ -9,7 +9,7 @@ function Book({book}){
     }
 
     return(
-        <div>
+        <div className="book">
             <div className="book-cover" onClick={clickBook}>
                 <h2>{book.title} - {book.year}</h2>
                 <h3>{book.author}</h3>
