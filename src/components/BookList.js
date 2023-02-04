@@ -4,6 +4,11 @@ import Book from "./Book";
 function BookList(){
 
     const[books, setBooks] = useState([])
+    const[chosenBook, setChosenBook] = useState({})
+
+    function chooseBook(book){
+        setChosenBook(book)
+    }
 
     useEffect(()=>{
         fetch('http://localhost:3000/books')
@@ -14,7 +19,7 @@ function BookList(){
     return(
         <div>
             {books.map((book)=>{
-                return <Book key={book.id} book={book}/>
+                return <Book key={book.id} chooseBook={chooseBook} book={book}/>
             })}
         </div>
     )
