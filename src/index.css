@@ -5,9 +5,18 @@ body{
   margin-left: 120px;
   margin-right: 120px;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
-
+#home{
+  color:antiquewhite;
+  background-color:rgb(69, 88, 62);
+  width: 500px;
+  height: 300px;
+  margin-left: 250px;
+  margin-top: 50px;
+  padding: 15px;
+}
 
 div.book{
   display: inline-block;
