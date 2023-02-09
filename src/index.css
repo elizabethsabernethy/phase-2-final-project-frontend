@@ -29,10 +29,10 @@ div.book-cover{
 }
 
 div.open-book{
-  background-color:rgb(255, 250, 244);
   width: 300px;
   height: 400px;
   text-align: center;
+  background-image: url('https://alaskanlumberjackshow.com/wp-content/uploads/large-old-paper-or-parchment-background-texture.jpg');
  }
 
  div.likes-div{
@@ -79,13 +79,11 @@ div.open-book{
   padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  color:brown;
 }
 
 .theme-header{
   font-size: smaller;
   font-weight: bold;
-  color:brown;
 }
 
 .likes{
@@ -109,6 +107,5 @@ div.open-book{
   padding-bottom: 15px;
   font-size: small;
   font-weight: bold;
-  color:brown;
 }
 
