@@ -26,6 +26,10 @@ div.open-book{
   text-align: center;
  }
 
+ div.likes-div{
+   
+ }
+
 .title{
   position: absolute;
   top: 60px;
@@ -50,9 +54,10 @@ div.open-book{
 }
 
 .summary{
-  font-size: medium;
+  font-size: smaller;
   margin: 0px;
   padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
 }
+
