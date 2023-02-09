@@ -1,18 +1,25 @@
 body{
+  background-image: url("https://images.pexels.com/photos/207662/pexels-photo-207662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size:contain;
+  background-color: brown;
   margin-left: 120px;
   margin-right: 120px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+
+
 div.book{
   display: inline-block;
-  margin: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
   vertical-align: top;
 }
 
 div.book-cover{
- background-color:rgb(36, 20, 7);
- color:antiquewhite;
+ background-color:rgb(59, 102, 167);
+ color:rgb(255, 250, 244);
  width: 300px;
  height: 400px;
  position: relative;
@@ -27,7 +34,13 @@ div.open-book{
  }
 
  div.likes-div{
-   
+  padding-bottom: 15px;
+  color:rgb(59, 102, 167);
+  background-color: rgb(255, 250, 244);
+  margin-bottom: 5px;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
  }
 
 .title{
@@ -60,4 +73,10 @@ div.open-book{
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.likes{
+  padding-top: 15px;
+}
+
+
 
