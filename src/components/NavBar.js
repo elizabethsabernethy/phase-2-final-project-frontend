@@ -20,7 +20,8 @@ function NavBar(){
             exact
             style={linkStyles}
             activeStyle={{
-                background:'red'
+                background:'white',
+                color: 'black'
             }}
             >
                 Home
@@ -30,7 +31,8 @@ function NavBar(){
             exact
             style={linkStyles}
             activeStyle={{
-                background:'red'
+                background:'white',
+                color: 'black'
             }}
             >
                 My Books

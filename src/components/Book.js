@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-function Book({book}){
+function Book({book, pickBook}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
     function hoverBook(){
         setHideDetails((hideDetails) => !hideDetails)
+    }
+
+    function clickBook(){
+        pickBook(book)
     }
 
     function likeBook(){
@@ -27,7 +31,7 @@ function Book({book}){
                 <h3 className="author">{book.author}</h3>
                 <h3 className="year">{book.year}</h3> 
             </div>
-            <div className="open-book"  onMouseLeave={hoverBook} hidden={hideDetails}>
+            <div className="open-book"  onMouseLeave={hoverBook} onClick={clickBook} hidden={hideDetails}>
                 <p className="summary">{book.summary}</p>
                 <p className="theme-header">Themes</p>
                 <ul>

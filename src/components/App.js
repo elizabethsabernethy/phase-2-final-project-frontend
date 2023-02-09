@@ -6,6 +6,10 @@ import NavBar from "./NavBar";
 
 function App(){
 
+  function pickBook(book){
+    console.log(book)
+  }
+
   return(
     <div>
     <NavBar />
@@ -14,7 +18,7 @@ function App(){
           <PickedBooks />
         </Route>
         <Route exact path="/">
-          <BookList />
+          <BookList pickBook={pickBook}/>
         </Route>
       </Switch>
     </div>
