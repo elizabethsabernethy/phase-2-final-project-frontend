@@ -3,6 +3,7 @@ import BookList from "./BookList";
 import PickedBooks from "./PickedBooks";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
+import Home from "./Home";
 
 function App(){
 
@@ -19,8 +20,11 @@ function App(){
         <Route exact path="/picked">
           <PickedBooks clickedBook={clickedBook}/>
         </Route>
-        <Route exact path="/">
+        <Route exact path="/collection">
           <BookList pickBook={pickBook}/>
+        </Route>
+        <Route exact path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
