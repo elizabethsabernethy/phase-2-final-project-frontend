@@ -4,7 +4,7 @@ body{
   background-color: brown;
   margin-left: 120px;
   margin-right: 120px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -67,11 +67,12 @@ div.open-book{
 }
 
 .summary{
-  font-size: smaller;
+  font-size: small;
   margin: 0px;
   padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
+  color:brown;
 }
 
 .likes{
@@ -88,5 +89,13 @@ div.open-book{
   margin-right: 15px;
   font-size: xx-large;
   border: 0px;
+}
+
+.theme{
+  text-align: left;
+  padding-bottom: 15px;
+  font-size: small;
+  font-weight: bold;
+  color:brown;
 }
 
