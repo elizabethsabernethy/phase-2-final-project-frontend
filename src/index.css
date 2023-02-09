@@ -81,13 +81,8 @@ div.open-book{
   font-weight: bold;
 }
 
-.likes{
-  padding-top: 15px;
-  font-size: large;
-}
-
 .like-btn{
-  background-color: rgb(53, 29, 6);
+  background-color: rgb(69, 88, 62);
   width: 60px;
   height: 60px;
   border-radius: 40px;
@@ -95,6 +90,8 @@ div.open-book{
   margin-right: 15px;
   font-size: xx-large;
   border: 0px;
+  margin-top: 15px;
+  margin-bottom: 50px;
 }
 
 .theme{
