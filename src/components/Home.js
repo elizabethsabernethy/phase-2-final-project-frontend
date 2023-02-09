@@ -10,11 +10,9 @@ function Home(){
                 check books out, and even add new books!
             </h3>
             <h4>Top 3 favorite books at the Library</h4>
-            <ol>
-                <li>Book 1</li>
-                <li>Book 2</li>
-                <li>Book 3</li>
-            </ol>
+            <h5>Book 1</h5>
+            <h5>Book 2</h5>
+            <h5>Book 3</h5>
         </div>
     )
 }
