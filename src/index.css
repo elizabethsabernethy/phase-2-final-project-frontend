@@ -18,12 +18,14 @@ div.book{
 }
 
 div.book-cover{
- background-color:rgb(59, 102, 167);
- color:rgb(255, 250, 244);
+ color:rgb(193, 179, 137);
  width: 300px;
  height: 400px;
  position: relative;
  text-align: center;
+ background-image: url('https://ih1.redbubble.net/image.2090850174.7179/hj,750x-pad,750x1000,f8f8f8.jpg');
+ background-size: 560px;
+ background-position: -130px;
 }
 
 div.open-book{
@@ -48,7 +50,10 @@ div.open-book{
   top: 60px;
   left: 0;
   right: 0;
-  margin: 15px
+  margin: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
 }
 
 .author{
@@ -56,7 +61,9 @@ div.open-book{
   bottom: 70px;
   left: 0;
   right: 0;
-  margin: 15px
+  margin: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .year{

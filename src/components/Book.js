@@ -8,11 +8,19 @@ function Book({book}){
         setHideDetails((hideDetails) => !hideDetails)
     }
 
+    function likeBook(){
+        console.log('like')
+    }
+
+    function dislikeBook(){
+        console.log('dislike')
+    }
+
     return(
         <div className="book">
             <div className="likes-div">
                 <h4 className="likes">Likes: {book.likes}</h4>
-                <button className="like-btn">👍</button>  <button className="like-btn">👎</button>
+                <button onClick={likeBook} className="like-btn">👍</button>  <button onClick={dislikeBook} className="like-btn">👎</button>
             </div>
             <div className="book-cover" hidden={!hideDetails} onClick={clickBook}>
                 <h2 className="title">{book.title}</h2>
