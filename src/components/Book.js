@@ -21,7 +21,7 @@ function Book({book}){
             </div>
             <div className="open-book"  onClick={clickBook} hidden={hideDetails}>
                 <p className="summary">{book.summary}</p>
-                <p>Themes</p>
+                <p className="theme-header">Themes</p>
                 <ul>
                     {book.themes.map((theme)=>{
                         return <li className="theme" key={theme}>{theme}</li>
