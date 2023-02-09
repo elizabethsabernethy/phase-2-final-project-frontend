@@ -12,7 +12,7 @@ function Book({book}){
         <div className="book">
             <div className="likes-div">
                 <h4 className="likes">Likes: {book.likes}</h4>
-                <button className="like-btn">Like Book</button>  <button className="like-btn">Unlike Book</button>
+                <button className="like-btn">👍</button>  <button className="like-btn">👎</button>
             </div>
             <div className="book-cover" hidden={!hideDetails} onClick={clickBook}>
                 <h2 className="title">{book.title}</h2>
