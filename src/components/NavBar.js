@@ -25,6 +25,16 @@ function NavBar(){
             >
                 Home
             </NavLink>
+            <NavLink
+            to="/picked"
+            exact
+            style={linkStyles}
+            activeStyle={{
+                background:'red'
+            }}
+            >
+                My Books
+            </NavLink>
         </div>
     )
 }
