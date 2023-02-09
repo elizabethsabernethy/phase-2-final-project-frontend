@@ -18,10 +18,10 @@ function Book({book}){
 
     return(
         <div className="book">
-            <div className="likes-div">
+            {/* <div className="likes-div">
                 <h4 className="likes">Likes: {book.likes}</h4>
                 <button onClick={likeBook} className="like-btn">👍</button>  <button onClick={dislikeBook} className="like-btn">👎</button>
-            </div>
+            </div> */}
             <div className="book-cover" hidden={!hideDetails} onMouseEnter={hoverBook}>
                 <h2 className="title">{book.title}</h2>
                 <h3 className="author">{book.author}</h3>
