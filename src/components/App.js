@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BookList from "./BookList";
 import PickedBooks from "./PickedBooks";
 import { Route, Switch } from "react-router-dom";
@@ -6,8 +6,10 @@ import NavBar from "./NavBar";
 
 function App(){
 
+  const[clickedBook, setClickedBook] = useState([])
+
   function pickBook(book){
-    console.log(book)
+    setClickedBook(book)
   }
 
   return(
@@ -15,7 +17,7 @@ function App(){
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks />
+          <PickedBooks clickedBook={clickedBook}/>
         </Route>
         <Route exact path="/">
           <BookList pickBook={pickBook}/>
