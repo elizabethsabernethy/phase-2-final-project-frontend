@@ -4,7 +4,7 @@ function Book({book}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
-    function clickBook(){
+    function hoverBook(){
         setHideDetails((hideDetails) => !hideDetails)
     }
 
@@ -22,12 +22,12 @@ function Book({book}){
                 <h4 className="likes">Likes: {book.likes}</h4>
                 <button onClick={likeBook} className="like-btn">👍</button>  <button onClick={dislikeBook} className="like-btn">👎</button>
             </div>
-            <div className="book-cover" hidden={!hideDetails} onClick={clickBook}>
+            <div className="book-cover" hidden={!hideDetails} onMouseEnter={hoverBook}>
                 <h2 className="title">{book.title}</h2>
                 <h3 className="author">{book.author}</h3>
                 <h3 className="year">{book.year}</h3> 
             </div>
-            <div className="open-book"  onClick={clickBook} hidden={hideDetails}>
+            <div className="open-book"  onMouseLeave={hoverBook} hidden={hideDetails}>
                 <p className="summary">{book.summary}</p>
                 <p className="theme-header">Themes</p>
                 <ul>
