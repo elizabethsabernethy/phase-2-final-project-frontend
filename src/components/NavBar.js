@@ -8,7 +8,7 @@ function NavBar(){
         width: "70px",
         padding: "12px",
         margin: "0 6px 6px",
-        background: "black",
+        background: "rgb(69, 88, 62)",
         textDecoration: "none",
         color: "white",
       };
@@ -21,7 +21,7 @@ function NavBar(){
             style={linkStyles}
             activeStyle={{
                 background:'white',
-                color: 'black'
+                color: 'rgb(69, 88, 62)'
             }}
             >
                 Home
@@ -32,7 +32,7 @@ function NavBar(){
             style={linkStyles}
             activeStyle={{
                 background:'white',
-                color: 'black'
+                color: 'rgb(69, 88, 62)'
             }}
             >
                 Collection
@@ -43,7 +43,7 @@ function NavBar(){
             style={linkStyles}
             activeStyle={{
                 background:'white',
-                color: 'black'
+                color: 'rgb(69, 88, 62)'
             }}
             >
                 My Books
