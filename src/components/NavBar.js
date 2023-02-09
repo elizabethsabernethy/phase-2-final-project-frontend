@@ -27,6 +27,17 @@ function NavBar(){
                 Home
             </NavLink>
             <NavLink
+            to="/collection"
+            exact
+            style={linkStyles}
+            activeStyle={{
+                background:'white',
+                color: 'black'
+            }}
+            >
+                Collection
+            </NavLink>
+            <NavLink
             to="/picked"
             exact
             style={linkStyles}
