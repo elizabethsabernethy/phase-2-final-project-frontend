@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Book({book, pickBook}){
+function Book({book, pickBook, likeBook}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
@@ -12,12 +12,32 @@ function Book({book, pickBook}){
         pickBook(book)
     }
 
-    function likeBook(){
-        console.log('like')
+    function handleLikeBook(){
+    fetch(`http://localhost:3000/books/${book.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+         likes: book.likes+=1
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedBook) => likeBook(updatedBook));
     }
 
-    function dislikeBook(){
-        console.log('dislike')
+    function handleDislikeBook(){
+        fetch(`http://localhost:3000/books/${book.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+         likes: book.likes-=1
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedBook) => likeBook(updatedBook));
     }
 
     return(
@@ -37,7 +57,7 @@ function Book({book, pickBook}){
                 </ul>
             </div>
             <div className="likes-div">
-                <button onClick={likeBook} className="like-btn">👍</button>  <button onClick={dislikeBook} className="like-btn">👎</button>
+                <button onClick={handleLikeBook} className="like-btn">👍</button>  <button onClick={handleDislikeBook} className="like-btn">👎</button>
             </div>
         </div>
     )
