@@ -36,13 +36,8 @@ div.open-book{
  }
 
  div.likes-div{
-  padding-bottom: 15px;
-  color:rgb(59, 102, 167);
-  background-color: rgb(255, 250, 244);
-  margin-bottom: 5px;
   width: 300px;
   text-align: center;
-  border-radius: 5px;
  }
 
 .title{
@@ -92,7 +87,7 @@ div.open-book{
 }
 
 .like-btn{
-  background-color: rgb(10, 44, 94);
+  background-color: rgb(53, 29, 6);
   width: 60px;
   height: 60px;
   border-radius: 40px;
