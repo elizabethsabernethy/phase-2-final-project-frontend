@@ -75,6 +75,12 @@ div.open-book{
   color:brown;
 }
 
+.theme-header{
+  font-size: smaller;
+  font-weight: bold;
+  color:brown;
+}
+
 .likes{
   padding-top: 15px;
   font-size: large;
