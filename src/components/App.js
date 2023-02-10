@@ -7,10 +7,10 @@ import Home from "./Home";
 
 function App(){
 
-  const[clickedBook, setClickedBook] = useState([])
+  const[clickedBooks, setClickedBooks] = useState([])
 
   function pickBook(book){
-    setClickedBook(book)
+    setClickedBooks([...clickedBooks, book])
   }
 
   return(
@@ -18,7 +18,7 @@ function App(){
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks clickedBook={clickedBook}/>
+          <PickedBooks clickedBook={clickedBooks}/>
         </Route>
         <Route exact path="/collection">
           <BookList pickBook={pickBook}/>
