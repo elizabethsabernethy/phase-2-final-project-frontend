@@ -9,6 +9,14 @@ function App(){
 
   const[myBooks, setMyBooks] = useState([])
 
+  const[books, setBooks] = useState([])
+
+  useEffect(()=>{
+      fetch('http://localhost:3000/books')
+      .then((resp)=> resp.json())
+      .then((books)=> setBooks(books))
+  },[])
+
   useEffect(()=>{
     fetch('http://localhost:3000/myBooks')
     .then((resp)=> resp.json())
@@ -46,7 +54,7 @@ function App(){
           <PickedBooks returnBook={returnBook} clickedBooks={myBooks}/>
         </Route>
         <Route exact path="/collection">
-          <BookList pickBook={pickBook}/>
+          <BookList books={books} setBooks={setBooks} pickBook={pickBook}/>
         </Route>
         <Route exact path="/">
           <Home />

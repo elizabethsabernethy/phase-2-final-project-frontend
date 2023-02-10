@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Book from "./Book";
 
-function BookList({pickBook}){
-
-    const[books, setBooks] = useState([])
-
-    useEffect(()=>{
-        fetch('http://localhost:3000/books')
-        .then((resp)=> resp.json())
-        .then((books)=> setBooks(books))
-    },[])
+function BookList({books, setBooks, pickBook}){
 
     function likeBook(updatedBook){
         const updatedBooks = books.map((book) => {
