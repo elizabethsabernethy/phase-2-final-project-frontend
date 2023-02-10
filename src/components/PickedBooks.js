@@ -2,6 +2,9 @@ import React, {useState} from "react";
 
 function PickedBooks({clickedBooks}){
 
+    //use fecth to get myBooks?
+    //add click function so user can return book, fetch delete from myBooks db.json
+
     const[hideDetails, setHideDetails] = useState(true)
 
     function hoverBook(){

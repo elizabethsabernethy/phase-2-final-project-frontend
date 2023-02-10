@@ -11,6 +11,8 @@ function Book({book, pickBook, likeBook}){
 
     function clickBook(){
         pickBook(book)
+        //add fetch to post new book to pickedBooks
+        //add fetch to delete book from collection
     }
 
     function handleLikeBook(){
