@@ -34,12 +34,16 @@ function App(){
       .then((myBook)=> setMyBooks([...myBooks, myBook]))
     }
 
+    function returnBook(book){
+      console.log(book)
+    }
+
   return(
     <div>
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks clickedBooks={myBooks}/>
+          <PickedBooks returnBook={returnBook} clickedBooks={myBooks}/>
         </Route>
         <Route exact path="/collection">
           <BookList pickBook={pickBook}/>
