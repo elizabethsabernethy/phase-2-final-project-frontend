@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function PickedBooks({clickedBook}){
+function PickedBooks({clickedBooks}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
@@ -9,22 +9,27 @@ function PickedBooks({clickedBook}){
     }
 
     return(
-        <div className="book">
-            {console.log(clickedBook)}
-            <div className="book-cover" hidden={!hideDetails} onMouseEnter={hoverBook}>
-                <h2 className="title">{clickedBook.title}</h2>
-                {/* <h3 className="author">{clickedBook.author}</h3>
-                <h3 className="year">{clickedBook.year}</h3>  */}
-            </div>
-            <div className="open-book"  onMouseLeave={hoverBook} hidden={hideDetails}>
-                <p className="summary">{clickedBook.summary}</p>
-                {/* <p className="theme-header">Themes</p>
-                <ul>
-                    {clickedBook.themes.map((theme)=>{
-                        return <li className="theme" key={theme}>{theme}</li>
-                    })}
-                </ul> */}
-            </div>
+        <div >
+            {clickedBooks.map((book)=>{
+                return (
+                    <div className="book" key={book.id}>
+                    <div className="book-cover" hidden={!hideDetails} onMouseEnter={hoverBook}>
+                        <h2 className="title">{book.title}</h2>
+                        <h3 className="author">{book.author}</h3>
+                        <h3 className="year">{book.year}</h3> 
+                    </div>
+                    <div className="open-book"  onMouseLeave={hoverBook}  hidden={hideDetails}>
+                        <p className="summary">{book.summary}</p>
+                        <p className="theme-header">Themes</p>
+                        <ul>
+                            {book.themes.map((theme)=>{
+                                return <li className="theme" key={theme}>{theme}</li>
+                            })}
+                        </ul>
+                    </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

@@ -18,7 +18,7 @@ function App(){
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks clickedBook={clickedBooks}/>
+          <PickedBooks clickedBooks={clickedBooks}/>
         </Route>
         <Route exact path="/collection">
           <BookList pickBook={pickBook}/>
