@@ -1,7 +1,7 @@
 import React from "react";
 import Book from "./Book";
 
-function BookList({books, setBooks, pickBook}){
+function BookList({books, setBooks, pickBook, removeFromCollection}){
 
     function likeBook(updatedBook){
         const updatedBooks = books.map((book) => {
@@ -17,7 +17,7 @@ function BookList({books, setBooks, pickBook}){
     return(
         <div>
             {books.map((book)=>{
-                return <Book key={book.id} book={book} likeBook={likeBook} pickBook={pickBook}/>
+                return <Book key={book.id} book={book} likeBook={likeBook} pickBook={pickBook} removeFromCollection={removeFromCollection}/>
             })}
         </div>
     )

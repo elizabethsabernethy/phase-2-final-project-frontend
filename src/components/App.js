@@ -46,6 +46,17 @@ function App(){
       console.log(book)
     }
 
+    function removeFromCollection(book){
+      fetch(`http://localhost:3000/books/${book.id}`,{
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then((resp) => resp.json())
+      .then((myBook)=> {console.log(myBook)})
+    }
+
   return(
     <div>
     <NavBar />
@@ -54,7 +65,7 @@ function App(){
           <PickedBooks returnBook={returnBook} clickedBooks={myBooks}/>
         </Route>
         <Route exact path="/collection">
-          <BookList books={books} setBooks={setBooks} pickBook={pickBook}/>
+          <BookList books={books} setBooks={setBooks} pickBook={pickBook} removeFromCollection={removeFromCollection}/>
         </Route>
         <Route exact path="/">
           <Home />

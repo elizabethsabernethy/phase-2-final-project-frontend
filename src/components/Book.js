@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Book({book, pickBook, likeBook}){
+function Book({book, pickBook, likeBook, removeFromCollection}){
 
     const[hideDetails, setHideDetails] = useState(true)
     const[liked, setLiked] = useState(false)
@@ -11,8 +11,7 @@ function Book({book, pickBook, likeBook}){
 
     function clickBook(){
         pickBook(book)
-        //add fetch to post new book to pickedBooks
-        //add fetch to delete book from collection
+        removeFromCollection(book)
     }
 
     function handleLikeBook(){
