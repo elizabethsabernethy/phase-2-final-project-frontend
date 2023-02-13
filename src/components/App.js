@@ -43,18 +43,38 @@ function App(){
     }
 
     function returnBook(book){
-      console.log(book)
+      fetch('http://localhost:3000/books',{
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+      "title" : book.title,
+      "author": book.author,
+      "summary": book.summary,
+      "themes": book.themes,
+      "likes": book.likes,
+      "year": book.year
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((book)=> setBooks([...books, book]))
     }
 
-    function removeFromCollection(book){
-      fetch(`http://localhost:3000/books/${book.id}`,{
+    function removeFromCollection(){
+      fetch(`http://localhost:3000/books`,{
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
       }
     })
       .then((resp) => resp.json())
-      .then((myBook)=> {console.log(myBook)})
+      .then((book)=> handleDelete(book))
+    }
+
+    function handleDelete(removedBook) {
+      const updatedBooks = books.filter((book) => book.id !== removedBook.id);
+      setBooks(updatedBooks);
     }
 
   return(
