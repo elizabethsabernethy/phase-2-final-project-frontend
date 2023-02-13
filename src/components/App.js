@@ -69,20 +69,36 @@ function App(){
       }
     })
       .then((resp) => resp.json())
-      .then((book)=> handleDelete(book))
+      .then((book)=> handleDeleteBook(book))
     }
 
-    function handleDelete(removedBook) {
+    function handleDeleteBook(removedBook) {
       const updatedBooks = books.filter((book) => book.id !== removedBook.id);
       setBooks(updatedBooks);
     }
+
+    function removeFromMyBooks(){
+      fetch(`http://localhost:3000/myBooks`,{
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+        .then((resp) => resp.json())
+        .then((book)=> handleDeleteMyBook(book))
+      }
+
+      function handleDeleteMyBook(removedBook) {
+        const updatedBooks = myBooks.filter((book) => book.id !== removedBook.id);
+        setMyBooks(updatedBooks);
+      }
 
   return(
     <div>
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks returnBook={returnBook} clickedBooks={myBooks}/>
+          <PickedBooks returnBook={returnBook} clickedBooks={myBooks} removeFromMyBooks={removeFromMyBooks}/>
         </Route>
         <Route exact path="/collection">
           <BookList books={books} setBooks={setBooks} pickBook={pickBook} removeFromCollection={removeFromCollection}/>

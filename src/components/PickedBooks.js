@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function PickedBooks({returnBook, clickedBooks}){
+function PickedBooks({returnBook, clickedBooks, removeFromMyBooks}){
 
     //use fecth to get myBooks?
     //add click function so user can return book, fetch delete from myBooks db.json
@@ -13,6 +13,7 @@ function PickedBooks({returnBook, clickedBooks}){
     
     function clickBook(book){
         returnBook(book)
+        removeFromMyBooks()
     }
 
     return(
