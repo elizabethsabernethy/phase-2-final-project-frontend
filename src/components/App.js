@@ -4,6 +4,7 @@ import PickedBooks from "./PickedBooks";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
+import AddBook from "./AddBook";
 
 function App(){
 
@@ -93,6 +94,10 @@ function App(){
         setMyBooks(updatedBooks);
       }
 
+      function onAddBook(newBook){
+        console.log(newBook)
+      }
+
   return(
     <div>
     <NavBar />
@@ -102,6 +107,9 @@ function App(){
         </Route>
         <Route exact path="/collection">
           <BookList books={books} setBooks={setBooks} pickBook={pickBook} removeFromCollection={removeFromCollection}/>
+        </Route>
+        <Route exact path="/addBook">
+          <AddBook onAddBook={onAddBook}/>
         </Route>
         <Route exact path="/">
           <Home />
