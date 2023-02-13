@@ -1,7 +1,6 @@
 body{
   background-image: url("https://images.pexels.com/photos/207662/pexels-photo-207662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size:contain;
-  background-color: brown;
   margin-left: 120px;
   margin-right: 120px;
   font-family:Georgia, 'Times New Roman', Times, serif;
@@ -9,7 +8,7 @@ body{
 }
 
 #home{
-  color:antiquewhite;
+  color:white;
   background-color:rgb(69, 88, 62);
   width: 500px;
   height: 300px;
@@ -110,4 +109,18 @@ div.open-book{
   font-size: small;
   font-weight: bold;
 }
+
+.newBook{
+  background-color: rgb(69, 88, 62);
+  color:white;
+  width: 1000px;
+  text-align: justify;
+}
+
+input[type=textarea] {
+  width:500px;
+  height:100px;
+  resize: none;
+}
+
 
