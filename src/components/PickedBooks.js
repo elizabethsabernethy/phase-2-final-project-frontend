@@ -13,7 +13,7 @@ function PickedBooks({returnBook, clickedBooks, removeFromMyBooks}){
     
     function clickBook(book){
         returnBook(book)
-        removeFromMyBooks()
+        removeFromMyBooks(book)
     }
 
     return(

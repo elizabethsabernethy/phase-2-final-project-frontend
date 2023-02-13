@@ -11,7 +11,7 @@ function Book({book, pickBook, likeBook, removeFromCollection}){
 
     function clickBook(){
         pickBook(book)
-        removeFromCollection()
+        removeFromCollection(book)
     }
 
     function handleLikeBook(){

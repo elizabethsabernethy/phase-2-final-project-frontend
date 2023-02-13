@@ -61,8 +61,8 @@ function App(){
       .then((book)=> setBooks([...books, book]))
     }
 
-    function removeFromCollection(){
-      fetch(`http://localhost:3000/books`,{
+    function removeFromCollection(book){
+      fetch(`http://localhost:3000/books/${book.id}`,{
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
@@ -77,8 +77,8 @@ function App(){
       setBooks(updatedBooks);
     }
 
-    function removeFromMyBooks(){
-      fetch(`http://localhost:3000/myBooks`,{
+    function removeFromMyBooks(book){
+      fetch(`http://localhost:3000/myBooks/${book.id}`,{
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json",
