@@ -48,6 +48,17 @@ function NavBar(){
             >
                 My Books
             </NavLink>
+            <NavLink
+            to="/addBook"
+            exact
+            style={linkStyles}
+            activeStyle={{
+                background:'white',
+                color: 'rgb(69, 88, 62)'
+            }}
+            >
+                Add Book
+            </NavLink>
         </div>
     )
 }
