@@ -41,6 +41,7 @@ function AddBook({onAddBook}){
             type="text"
             name="title"
             value={title}
+            required
             onChange={(e) => setTitle(e.target.value)}
           />
         </label>
@@ -50,6 +51,7 @@ function AddBook({onAddBook}){
             type="text"
             name="author"
             value={author}
+            required
             onChange={(e) => setAuthor(e.target.value)}
           />
         </label>
@@ -58,7 +60,7 @@ function AddBook({onAddBook}){
             <label id='summary-label'>
                  Summary
                  <div>
-                <textarea name="summary" value={summary} onChange={(e) => setSummary(e.target.value)} rows="4" cols="50" maxLength={500}>
+                <textarea name="summary" value={summary} required onChange={(e) => setSummary(e.target.value)} rows="4" cols="50" maxLength={500}>
                 </textarea>
                  </div>
             </label>
