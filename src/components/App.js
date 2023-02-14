@@ -32,36 +32,25 @@ function App(){
       setBooks(updatedBooks);
     }
 
-   function onBookReturn(book){
+  function onBookReturn(book){
     setBooks([...books, book])
    } 
 
-    function removeFromMyBooks(book){
-      fetch(`http://localhost:3000/myBooks/${book.id}`,{
-        method: 'DELETE',
-        headers: {
-          "Content-Type": "application/json",
-        }
-      })
-        .then((resp) => resp.json())
-        .then((book)=> handleDeleteMyBook(book))
-      }
+  function onRemoveMyBook(removedBook){
+    const updatedBooks = myBooks.filter((book) => book.id !== removedBook.id);
+    setMyBooks(updatedBooks);
+  }
 
-      function handleDeleteMyBook(removedBook) {
-        const updatedBooks = myBooks.filter((book) => book.id !== removedBook.id);
-        setMyBooks(updatedBooks);
-      }
-
-      function onAddBook(newBook){
-        setBooks([...books, newBook])
-      }
+  function onAddBook(newBook){
+    setBooks([...books, newBook])
+  }
 
   return(
     <div>
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks onBookReturn={onBookReturn} clickedBooks={myBooks} removeFromMyBooks={removeFromMyBooks}/>
+          <PickedBooks onBookReturn={onBookReturn} clickedBooks={myBooks} onRemoveMyBook={onRemoveMyBook}/>
         </Route>
         <Route exact path="/collection">
           <BookList books={books} setBooks={setBooks} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
