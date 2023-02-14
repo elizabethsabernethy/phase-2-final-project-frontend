@@ -59,7 +59,6 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
     })
       .then((resp) => resp.json())
       .then((updatedBook) => likeBook(updatedBook));
-      alert(`Yay! We're so glad you liked ${book.title}`)
         }
         
     }
@@ -78,7 +77,6 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
     })
       .then((resp) => resp.json())
       .then((updatedBook) => likeBook(updatedBook));
-      alert(`Aww! We're sorry you disliked ${book.title}`)
         }
         
     }
