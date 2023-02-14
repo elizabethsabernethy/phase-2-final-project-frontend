@@ -61,12 +61,6 @@ function Book({book, pickBook, likeBook, removeFromCollection}){
             </div>
             <div className="open-book"  onMouseLeave={hoverBook} onClick={clickBook} hidden={hideDetails}>
                 <p className="summary">{book.summary}</p>
-                <p className="theme-header">Themes</p>
-                <ul>
-                    {book.themes.map((theme)=>{
-                        return <li className="theme" key={theme}>{theme}</li>
-                    })}
-                </ul>
             </div>
             <div className="likes-div">
                 <button onClick={handleLikeBook} style={liked ? {backgroundColor:'rgb(125, 151, 116)'} : {backgroundColor: 'rgb(69, 88, 62)', opacity: 0.50}} className="like-btn">👍</button>  <button style={!liked? {backgroundColor: 'rgb(69, 88, 62)'} : {backgroundColor:'rgb(125, 151, 116)', opacity: 0.50}} onClick={handleDislikeBook} className="like-btn">👎</button>
