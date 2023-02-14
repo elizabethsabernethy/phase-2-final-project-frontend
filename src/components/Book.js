@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Book({book, pickBook, likeBook, removeFromCollection}){
+function Book({book, onPickBook, likeBook, removeFromCollection}){
 
     const[hideDetails, setHideDetails] = useState(true)
     const[liked, setLiked] = useState(false)
@@ -10,7 +10,23 @@ function Book({book, pickBook, likeBook, removeFromCollection}){
     }
 
     function clickBook(){
-        pickBook(book)
+        fetch('http://localhost:3000/myBooks',{
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+          "title" : book.title,
+          "author": book.author,
+          "summary": book.summary,
+          "themes": book.themes,
+          "likes": book.likes,
+          "year": book.year
+          }),
+        })
+          .then((resp) => resp.json())
+          .then((myBook)=> onPickBook(myBook))
+          
         removeFromCollection(book)
     }
 
