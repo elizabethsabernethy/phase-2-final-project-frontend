@@ -27,10 +27,11 @@ function AddBook({onAddBook}){
     })
       .then((resp) => resp.json())
       .then((newBook) => onAddBook(newBook));
-  }
+
+    }
   
     return (
-      <form className="newBook" onSubmit={handleSubmit}>
+      <form id="newBook" onSubmit={handleSubmit}>
         <div id='title-author-input'>
             <label>
           Title:

@@ -98,7 +98,7 @@ div.open-book{
   margin-bottom: 50px;
 }
 
-.newBook{
+#newBook{
   background-color: rgb(69, 88, 62);
   color:white;
   width: 1000px;

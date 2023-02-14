@@ -42,6 +42,7 @@ function App(){
   }
 
   function onAddBook(newBook){
+    alert(`${newBook.title} has been added to the 'Collection'`)
     setBooks([...books, newBook])
   }
 
