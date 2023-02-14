@@ -31,7 +31,9 @@ function AddBook({onAddBook}){
     }
   
     return (
-      <form id="newBook" onSubmit={handleSubmit}>
+      <div>
+        <h3>To add a new book, please fill out the form below.</h3>
+        <form id="newBook" onSubmit={handleSubmit}>
         <div id='title-author-input'>
             <label>
           Title:
@@ -74,6 +76,8 @@ function AddBook({onAddBook}){
         </div>
         <button type="submit">Add to Collection</button>
       </form>
+      </div>
+      
     );
   }
 
