@@ -2,9 +2,6 @@ import React, {useState} from "react";
 
 function PickedBooks({returnBook, clickedBooks, removeFromMyBooks}){
 
-    //use fecth to get myBooks?
-    //add click function so user can return book, fetch delete from myBooks db.json
-
     const[hideDetails, setHideDetails] = useState(true)
 
     function hoverBook(){
@@ -28,12 +25,6 @@ function PickedBooks({returnBook, clickedBooks, removeFromMyBooks}){
                     </div>
                     <div className="open-book"  onMouseLeave={hoverBook}  hidden={hideDetails}>
                         <p className="summary">{book.summary}</p>
-                        <p className="theme-header">Themes</p>
-                        <ul>
-                            {book.themes.map((theme)=>{
-                                return <li className="theme" key={theme}>{theme}</li>
-                            })}
-                        </ul>
                     </div>
                     </div>
                 )
