@@ -63,7 +63,7 @@ function Book({book, pickBook, likeBook, removeFromCollection}){
                 <p className="summary">{book.summary}</p>
             </div>
             <div className="likes-div">
-                <button onClick={handleLikeBook} style={liked ? {backgroundColor:'rgb(125, 151, 116)'} : {backgroundColor: 'rgb(69, 88, 62)', opacity: 0.50}} className="like-btn">👍</button>  <button style={!liked? {backgroundColor: 'rgb(69, 88, 62)'} : {backgroundColor:'rgb(125, 151, 116)', opacity: 0.50}} onClick={handleDislikeBook} className="like-btn">👎</button>
+                <button onClick={handleLikeBook} style={!liked ? {backgroundColor:'rgb(125, 151, 116)'} : {backgroundColor: 'rgb(69, 88, 62)', opacity: 0.50}} className="like-btn">👍</button>  <button style={liked? {backgroundColor: 'rgb(69, 88, 62)'} : {backgroundColor:'rgb(125, 151, 116)', opacity: 0.50}} onClick={handleDislikeBook} className="like-btn">👎</button>
             </div>
         </div>
     )
