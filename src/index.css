@@ -103,6 +103,8 @@ div.open-book{
   color:white;
   width: 1000px;
   text-align: center;
+  padding: 5px;
+  height: 300px;
 }
 
 input{
@@ -147,7 +149,7 @@ button[type=submit]:hover{
   background-color: rgb(133, 161, 138);
   color:rgb(0, 0, 0);
   width: 230px;
-  height: 70px;
+  height: 60px;
   font-size: large;
 }
 
