@@ -40,6 +40,7 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
     }
 
     function clickBook(){
+      alert(`You've added ${book.title} to 'My Books'`)
       pickBook(book)
       removeFromCollection(book)
     }
