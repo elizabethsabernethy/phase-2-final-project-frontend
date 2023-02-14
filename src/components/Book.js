@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Book({book, onPickBook, likeBook, removeFromCollection}){
+function Book({book, onPickBook, likeBook, onRemoveBook}){
 
     const[hideDetails, setHideDetails] = useState(true)
     const[liked, setLiked] = useState(false)
@@ -9,8 +9,19 @@ function Book({book, onPickBook, likeBook, removeFromCollection}){
         setHideDetails((hideDetails) => !hideDetails)
     }
 
-    function clickBook(){
-        fetch('http://localhost:3000/myBooks',{
+    function removeFromCollection(book){
+      fetch(`http://localhost:3000/books/${book.id}`,{
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then((resp) => resp.json())
+      .then((book)=> onRemoveBook(book))
+    }
+
+    function pickBook(book){
+      fetch('http://localhost:3000/myBooks',{
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
@@ -26,8 +37,11 @@ function Book({book, onPickBook, likeBook, removeFromCollection}){
         })
           .then((resp) => resp.json())
           .then((myBook)=> onPickBook(myBook))
+    }
 
-        removeFromCollection(book)
+    function clickBook(){
+      pickBook(book)
+      removeFromCollection(book)
     }
 
     function handleLikeBook(){
