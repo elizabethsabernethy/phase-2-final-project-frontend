@@ -77,16 +77,12 @@ div.open-book{
 }
 
 .summary{
-  font-size: small;
+  font-size: 15px;
   margin: 0px;
   padding-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.theme-header{
-  font-size: smaller;
-  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
 }
 
 .like-btn{
@@ -100,13 +96,6 @@ div.open-book{
   border: 0px;
   margin-top: 15px;
   margin-bottom: 50px;
-}
-
-.theme{
-  text-align: left;
-  padding-bottom: 15px;
-  font-size: small;
-  font-weight: bold;
 }
 
 .newBook{
