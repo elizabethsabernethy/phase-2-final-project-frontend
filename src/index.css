@@ -1,6 +1,5 @@
 body{
   background-image: url("https://images.pexels.com/photos/207662/pexels-photo-207662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size:contain;
   margin-left: 120px;
   margin-right: 120px;
   font-family:Georgia, 'Times New Roman', Times, serif;
@@ -114,13 +113,11 @@ div.open-book{
   background-color: rgb(69, 88, 62);
   color:white;
   width: 1000px;
-  text-align: justify;
+  text-align: center;
 }
 
-input[type=textarea] {
-  width:500px;
-  height:100px;
-  resize: none;
+input{
+  margin: 20px;
 }
 
 
