@@ -26,7 +26,7 @@ function Book({book, onPickBook, likeBook, removeFromCollection}){
         })
           .then((resp) => resp.json())
           .then((myBook)=> onPickBook(myBook))
-          
+
         removeFromCollection(book)
     }
 
