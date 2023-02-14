@@ -9,15 +9,15 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
         setHideDetails((hideDetails) => !hideDetails)
     }
 
-    function removeFromCollection(book){
-      fetch(`http://localhost:3000/books/${book.id}`,{
+    function removeFromCollection(theBook){
+      fetch(`http://localhost:3000/books/${theBook.id}`,{
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
       }
     })
       .then((resp) => resp.json())
-      .then((book)=> onRemoveBook(book))
+      .then(()=> onRemoveBook(theBook))
     }
 
     function pickBook(book){
