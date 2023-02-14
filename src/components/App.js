@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BookList from "./BookList";
-import PickedBooks from "./PickedBooks";
+import MyBookList from "./MyBookList";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -50,7 +50,7 @@ function App(){
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <PickedBooks onBookReturn={onBookReturn} clickedBooks={myBooks} onRemoveMyBook={onRemoveMyBook}/>
+          <MyBookList onBookReturn={onBookReturn} clickedBooks={myBooks} onRemoveMyBook={onRemoveMyBook}/>
         </Route>
         <Route exact path="/collection">
           <BookList books={books} setBooks={setBooks} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
