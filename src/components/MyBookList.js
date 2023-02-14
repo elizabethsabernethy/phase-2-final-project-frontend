@@ -6,7 +6,7 @@ function MyBookList({onBookReturn, clickedBooks, onRemoveMyBook}){
     return(
         <div>
             {clickedBooks.map((book)=>{
-                return <PickedBooks key={book.id} onBookReturn={onBookReturn} clickedBooks={clickedBooks} onRemoveMyBook={onRemoveMyBook}/>
+                return <PickedBooks key={book.id} onBookReturn={onBookReturn} book={book} onRemoveMyBook={onRemoveMyBook}/>
             })}
         </div>
     )
