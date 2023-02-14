@@ -56,9 +56,8 @@ function AddBook({onAddBook}){
             <label id='summary-label'>
                  Summary
                  <div>
-                <textarea name="summary" value={summary} onChange={(e) => setSummary(e.target.value)} rows="4" cols="50">
-                                Enter text here...
-                            </textarea>
+                <textarea name="summary" value={summary} onChange={(e) => setSummary(e.target.value)} rows="4" cols="50" maxLength={500}>
+                </textarea>
                  </div>
             </label>
         </div>
