@@ -7,12 +7,12 @@ function Home(){
             <h1>Welcome to the Library!</h1>
             <h3>
                 Here at the Library, you can view books in the collection,
-                check books out, and even add new books!
+                currate your favorite books, and even add new books!
             </h3>
-            <h4>Top 3 favorite books at the Library</h4>
-            <h5>Book 1</h5>
-            <h5>Book 2</h5>
-            <h5>Book 3</h5>
+            <h3>
+                Please visit each area of the library to 
+                learn more about everything we have to offer.
+            </h3>
         </div>
     )
 }
