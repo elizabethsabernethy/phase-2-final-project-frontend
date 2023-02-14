@@ -15,7 +15,7 @@ function AddBook({onAddBook}){
         title: title,
         author: author,
         summary: summary,
-        likes: 0,
+        likes: false,
         year: year
       };
       fetch("http://localhost:3000/books", {
