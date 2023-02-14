@@ -121,6 +121,9 @@ input{
   width: 300px;
 }
 
+textarea{
+  margin: 20px;
+}
 
 
 
