@@ -47,40 +47,43 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
 
     function handleLikeBook(){
         if(!liked){
-        setLiked(true)
-        fetch(`http://localhost:3000/books/${book.id}`, {
+          setLiked(true)
+          patchLike()
+        }
+        else if(liked){
+          setLiked(false)
+          patchDislike()
+        }
+    }
+
+    function patchLike(){
+      fetch(`http://localhost:3000/books/${book.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-         likes: book.likes+=1
-      }),
+        likes: book.likes+=1
+      })
     })
       .then((resp) => resp.json())
       .then((updatedBook) => likeBook(updatedBook));
-        }
-        
     }
-
-    function handleDislikeBook(){
-        if(liked){
-        setLiked(false)
-        fetch(`http://localhost:3000/books/${book.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-         likes: book.likes-=1
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((updatedBook) => likeBook(updatedBook));
-        }
         
+    function patchDislike(){
+      fetch(`http://localhost:3000/books/${book.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              likes: book.likes-=1
+            }),
+          })
+          .then((resp) => resp.json())
+          .then((updatedBook) => likeBook(updatedBook));
     }
-
+    
     return(
         <div className="book">
             <div className="book-cover" hidden={!hideDetails} onMouseEnter={hoverBook}>
@@ -92,7 +95,7 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
                 <p className="summary">{book.summary}</p>
             </div>
             <div className="likes-div">
-                <button onClick={handleLikeBook} style={!liked ? {backgroundColor:'rgb(125, 151, 116)'} : {backgroundColor: 'rgb(69, 88, 62)', opacity: 0.50}} className="like-btn">👍</button>  <button style={liked? {backgroundColor: 'rgb(69, 88, 62)'} : {backgroundColor:'rgb(125, 151, 116)', opacity: 0.50}} onClick={handleDislikeBook} className="like-btn">👎</button>
+                <button onClick={handleLikeBook} style={liked ? {backgroundColor:'rgb(125, 151, 116)'} : {backgroundColor: 'rgb(69, 88, 62)', opacity: 0.50}} className="like-btn">❤️</button>
             </div>
         </div>
     )
