@@ -53,12 +53,13 @@ function AddBook({onAddBook}){
         </div>
         <div >
             <label id='summary-label'>
-                Summary: 
+                 Summary
+                 <div>
                 <textarea name="summary" value={summary} onChange={(e) => setSummary(e.target.value)} rows="4" cols="50">
-                Enter text here...
-            </textarea>
+                                Enter text here...
+                            </textarea>
+                 </div>
             </label>
-            
         </div>
         <div id='year-input'> 
            <label>
