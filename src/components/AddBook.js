@@ -31,7 +31,8 @@ function AddBook({onAddBook}){
   
     return (
       <form className="newBook" onSubmit={handleSubmit}>
-        <label>
+        <div id='title-author-input'>
+            <label>
           Title:
           <input
             type="text"
@@ -49,25 +50,29 @@ function AddBook({onAddBook}){
             onChange={(e) => setAuthor(e.target.value)}
           />
         </label>
-        <label>
-          Summary:
-          <input
-            type="textarea"
-            name="summary"
-            value={summary}
-            onChange={(e) => setSummary(e.target.value)}
-          />
-        </label>
-        <label>
-          Year:
+        </div>
+        <div id='summary-input'>
+            <label>
+                    Summary:
+                    <input
+                        type="textarea"
+                        name="summary"
+                        value={summary}
+                        onChange={(e) => setSummary(e.target.value)}
+                    />
+                    </label>
+        </div>
+        <div id='year-input'> 
+           <label>
+            Year:
           <input
             type="number"
             name="year"
             value={year}
             onChange={(e) => setYear(e.target.value)}
           />
-        </label>
-  
+        </label> 
+        </div>
         <button type="submit">Add to Collection</button>
       </form>
     );
