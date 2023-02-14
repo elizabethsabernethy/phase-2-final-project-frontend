@@ -1,12 +1,31 @@
 import React, {useState} from "react";
 
-function PickedBooks({returnBook, clickedBooks, removeFromMyBooks}){
+function PickedBooks({onBookReturn, clickedBooks, removeFromMyBooks}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
     function hoverBook(){
         setHideDetails((hideDetails) => !hideDetails)
     }
+
+    function returnBook(book){
+        fetch('http://localhost:3000/books',{
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+        "title" : book.title,
+        "author": book.author,
+        "summary": book.summary,
+        "themes": book.themes,
+        "likes": book.likes,
+        "year": book.year
+        }),
+      })
+        .then((resp) => resp.json())
+        .then((book)=> onBookReturn(book))
+      }
     
     function clickBook(book){
         returnBook(book)
