@@ -13,6 +13,5 @@ The user should be able to filter books by typing the name.**
 Notes:
 
 - my Books hover reveals details for all books instead on individual one being hovered...
-- when user clicks on book, whether in collection or my Books, the book is added to opposite 'page' but not immediately deleted. On refresh the delete is shown. 
 - figure out how to show the top 3 liked books on Home
 - summary text of new book not contained within div of open book when user adds new Book
