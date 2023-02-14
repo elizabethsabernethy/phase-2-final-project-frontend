@@ -1,5 +1,5 @@
 import React from "react";
-import PickedBooks from "./Book";
+import PickedBooks from "./PickedBooks";
 
 function MyBookList({onBookReturn, clickedBooks, onRemoveMyBook}){
 
