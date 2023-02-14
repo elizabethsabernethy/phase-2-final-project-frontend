@@ -39,8 +39,9 @@ function PickedBooks({onBookReturn, clickedBooks, onRemoveMyBook}){
         }
     
     function clickBook(book){
-        returnBook(book)
-        removeFromMyBooks(book)
+      alert(`You've returned ${book.title} to the 'Collection'`)
+      returnBook(book)
+      removeFromMyBooks(book)
     }
 
     return(
