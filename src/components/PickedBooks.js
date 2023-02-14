@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function PickedBooks({onBookReturn, clickedBooks, removeFromMyBooks}){
+function PickedBooks({onBookReturn, clickedBooks, onRemoveMyBook}){
 
     const[hideDetails, setHideDetails] = useState(true)
 
@@ -26,6 +26,17 @@ function PickedBooks({onBookReturn, clickedBooks, removeFromMyBooks}){
         .then((resp) => resp.json())
         .then((book)=> onBookReturn(book))
       }
+
+      function removeFromMyBooks(book){
+        fetch(`http://localhost:3000/myBooks/${book.id}`,{
+          method: 'DELETE',
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })
+          .then((resp) => resp.json())
+          .then((book)=> onRemoveMyBook(book))
+        }
     
     function clickBook(book){
         returnBook(book)
