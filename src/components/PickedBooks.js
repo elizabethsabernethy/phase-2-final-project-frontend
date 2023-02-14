@@ -27,15 +27,15 @@ function PickedBooks({onBookReturn, clickedBooks, onRemoveMyBook}){
         .then((book)=> onBookReturn(book))
       }
 
-      function removeFromMyBooks(book){
-        fetch(`http://localhost:3000/myBooks/${book.id}`,{
+      function removeFromMyBooks(theBook){
+        fetch(`http://localhost:3000/myBooks/${theBook.id}`,{
           method: 'DELETE',
           headers: {
             "Content-Type": "application/json",
           }
         })
           .then((resp) => resp.json())
-          .then((book)=> onRemoveMyBook(book))
+          .then(()=> onRemoveMyBook(theBook))
         }
     
     function clickBook(book){
