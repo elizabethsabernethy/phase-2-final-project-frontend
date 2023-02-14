@@ -95,7 +95,7 @@ function App(){
       }
 
       function onAddBook(newBook){
-        console.log(newBook)
+        setBooks([...books, newBook])
       }
 
   return(
