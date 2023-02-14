@@ -24,24 +24,9 @@ function App(){
     .then((myBooks)=> setMyBooks(myBooks))
   },[])
 
-  function pickBook(book){
-    fetch('http://localhost:3000/myBooks',{
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-      "title" : book.title,
-      "author": book.author,
-      "summary": book.summary,
-      "themes": book.themes,
-      "likes": book.likes,
-      "year": book.year
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((myBook)=> setMyBooks([...myBooks, myBook]))
-    }
+  function onPickBook(myBook){
+    setMyBooks([...myBooks, myBook])
+  }
 
     function returnBook(book){
       fetch('http://localhost:3000/books',{
@@ -106,7 +91,7 @@ function App(){
           <PickedBooks returnBook={returnBook} clickedBooks={myBooks} removeFromMyBooks={removeFromMyBooks}/>
         </Route>
         <Route exact path="/collection">
-          <BookList books={books} setBooks={setBooks} pickBook={pickBook} removeFromCollection={removeFromCollection}/>
+          <BookList books={books} setBooks={setBooks} onPickBook={onPickBook} removeFromCollection={removeFromCollection}/>
         </Route>
         <Route exact path="/addBook">
           <AddBook onAddBook={onAddBook}/>
