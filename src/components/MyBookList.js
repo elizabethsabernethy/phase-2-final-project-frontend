@@ -3,21 +3,38 @@ import PickedBooks from "./PickedBooks";
 import Filter from "./Filter";
 import Sort from "./Sort";
 
-function MyBookList({onBookReturn, clickedBooks, onRemoveMyBook}){
+function MyBookList({onBookReturn, books, onRemoveMyBook}){
 
-    const [filteredTitles, setFilteredTitles] = useState('')
+  const [filteredTitles, setFilteredTitles] = useState('')
+  const [sortBy, setSortBy] = useState('Sort Books')
 
-    function filterTitles(input){
+      function filterTitles(input){
         setFilteredTitles(input)
       }
-      
-      const booksToShow = clickedBooks.filter((book)=>{
-        return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
-      })
 
       function handleSetSortBy(selection){
-        console.log(selection)
+        setSortBy(selection)
       }
+    
+      const sortedBooks = books.sort((a,b)=> { 
+        if(sortBy === 'A-Z'){
+          return a.title.localeCompare(b.title)
+        }
+        else if(sortBy === 'Z-A'){
+          return b.title.localeCompare(a.title)
+        }
+        else if(sortBy === 'newest'){
+          return b.year - a.year
+        }
+        else if(sortBy === 'oldest'){
+          return a.year - b.year
+        }
+        return books;
+      });
+
+      const booksToShow = sortedBooks.filter((book)=>{
+            return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
+      })
 
     return(
         <div>
