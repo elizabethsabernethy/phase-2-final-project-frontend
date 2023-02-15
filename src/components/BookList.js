@@ -35,9 +35,9 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
           <h2><u>There are</u> {books.length} <u>books available to be checked out</u></h2>
           <h4>To check a book out, simply click on the book</h4>
           <h4>To like a book, hit the heart button below the book</h4>
-          <div id='filter-sort'>
-            <div id='filter'><Filter filterTitles={filterTitles}/></div>
-            <div id='sort'><Sort handleSetSortBy={handleSetSortBy}/></div>
+          <div className='filter-sort'>
+            <div className='filter'><Filter filterTitles={filterTitles}/></div>
+            <div className='sort'><Sort handleSetSortBy={handleSetSortBy}/></div>
           </div>
               
             {booksToShow.map((book)=>{
