@@ -14,7 +14,6 @@ function Sort({handleSetSortBy}){
             <option value="Z-A">Titles: Z - A</option>
             <option value="oldest">Oldest</option>
             <option value="newest">Newest</option>
-            <option value="most-likes">Most Liked</option>
             </select>
         </div>
     )
