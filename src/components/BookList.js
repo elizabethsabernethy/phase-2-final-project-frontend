@@ -36,7 +36,8 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
           <h4>To check a book out, simply click on the book</h4>
           <h4>To like a book, hit the heart button below the book</h4>
           <div id='filter-sort'>
-              <Filter filterTitles={filterTitles}/> <Sort handleSetSortBy={handleSetSortBy}/>
+              <Filter filterTitles={filterTitles}/> 
+              <Sort handleSetSortBy={handleSetSortBy}/>
           </div>
             {booksToShow.map((book)=>{
                 return <Book key={book.id} book={book} likeBook={likeBook} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
