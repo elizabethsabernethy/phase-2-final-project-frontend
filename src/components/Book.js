@@ -48,12 +48,11 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
     function handleLikeBook(){
         if(!liked){
           setLiked(true)
-          patchLike()
         }
         else if(liked){
           setLiked(false)
-          patchDislike()
         }
+        patchLike()
     }
 
     function patchLike(){
@@ -63,25 +62,11 @@ function Book({book, onPickBook, likeBook, onRemoveBook}){
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        likes: true
+        likes: liked
       })
     })
       .then((resp) => resp.json())
       .then((updatedBook) => likeBook(updatedBook));
-    }
-        
-    function patchDislike(){
-      fetch(`http://localhost:3000/books/${book.id}`, {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              likes: false
-            }),
-          })
-          .then((resp) => resp.json())
-          .then((updatedBook) => likeBook(updatedBook));
     }
     
     return(
