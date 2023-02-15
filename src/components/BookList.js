@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Book from "./Book";
 import Filter from "./Filter";
 
 function BookList({books, setBooks, onPickBook, onRemoveBook}){
+
+  const [filteredTitles, setFilteredTitles] = useState('')
 
     function likeBook(updatedBook){
         const updatedBooks = books.map((book) => {
@@ -15,13 +17,21 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
         setBooks(updatedBooks);
       }
 
+      function filterTitles(input){
+        setFilteredTitles(input)
+      }
+      
+      const booksToShow = books.filter((book)=>{
+        return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
+      })
+
     return(
         <div>
           <h2><u>There are</u> {books.length} <u>books available to be checked out</u></h2>
           <h4>To check a book out, simply click on the book</h4>
           <h4>To like a book, hit the heart button below the book</h4>
-          <Filter />
-            {books.map((book)=>{
+          <Filter filterTitles={filterTitles}/>
+            {booksToShow.map((book)=>{
                 return <Book key={book.id} book={book} likeBook={likeBook} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
             })}
         </div>
