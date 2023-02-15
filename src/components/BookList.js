@@ -34,10 +34,10 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
         else if(sortBy === 'Z-A'){
           return b.title.localeCompare(a.title)
         }
-        else if(sortBy === 'oldest'){
+        else if(sortBy === 'newest'){
           return b.year - a.year
         }
-        else if(sortBy === 'newest'){
+        else if(sortBy === 'oldest'){
           return a.year - b.year
         }
         return books;
