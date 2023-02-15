@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Book from "./Book";
 import Filter from "./Filter";
+import Sort from "./Sort";
 
 function BookList({books, setBooks, onPickBook, onRemoveBook}){
 
@@ -25,12 +26,17 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
         return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
       })
 
+      function handleSetSortBy(selection){
+        console.log(selection)
+      }
+
     return(
         <div>
           <h2><u>There are</u> {books.length} <u>books available to be checked out</u></h2>
           <h4>To check a book out, simply click on the book</h4>
           <h4>To like a book, hit the heart button below the book</h4>
           <Filter filterTitles={filterTitles}/>
+          <Sort handleSetSortBy={handleSetSortBy}/>
             {booksToShow.map((book)=>{
                 return <Book key={book.id} book={book} likeBook={likeBook} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
             })}
