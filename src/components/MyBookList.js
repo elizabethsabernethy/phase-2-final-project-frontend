@@ -38,7 +38,7 @@ function MyBookList({onBookReturn, books, onRemoveMyBook}){
 
     return(
         <div>
-            <h2><u>You have</u> {clickedBooks.length} <u>books checked out</u></h2>
+            <h2><u>You have</u> {books.length} <u>books checked out</u></h2>
             <h4>(To return a book back to the collection, simply click on the book)</h4>
             <div className='filter-sort'>
             <div className='filter'><Filter filterTitles={filterTitles}/></div>
