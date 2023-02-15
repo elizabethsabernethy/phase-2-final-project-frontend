@@ -6,6 +6,7 @@ import Sort from "./Sort";
 function BookList({books, setBooks, onPickBook, onRemoveBook}){
 
   const [filteredTitles, setFilteredTitles] = useState('')
+  const [sortBy, setSortBy] = useState('Sort Books')
 
     function likeBook(updatedBook){
         const updatedBooks = books.map((book) => {
@@ -21,14 +22,30 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
       function filterTitles(input){
         setFilteredTitles(input)
       }
-      
-      const booksToShow = books.filter((book)=>{
-        return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
-      })
 
       function handleSetSortBy(selection){
-        console.log(selection)
+        setSortBy(selection)
       }
+    
+      const sortedBooks = books.sort((a,b)=> { 
+        if(sortBy === 'A-Z'){
+          return a.title.localeCompare(b.title)
+        }
+        else if(sortBy === 'Z-A'){
+          return b.title.localeCompare(a.title)
+        }
+        else if(sortBy === 'oldest'){
+          return b.year - a.year
+        }
+        else if(sortBy === 'newest'){
+          return a.year - b.year
+        }
+        return books;
+      });
+
+      const booksToShow = sortedBooks.filter((book)=>{
+            return ((book.title).toLowerCase()).match(filteredTitles.toLowerCase());
+      })
 
     return(
         <div>
@@ -38,7 +55,6 @@ function BookList({books, setBooks, onPickBook, onRemoveBook}){
             <div className='filter'><Filter filterTitles={filterTitles}/></div>
             <div className='sort'><Sort handleSetSortBy={handleSetSortBy}/></div>
           </div>
-              
             {booksToShow.map((book)=>{
                 return <Book key={book.id} book={book} likeBook={likeBook} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
             })}
