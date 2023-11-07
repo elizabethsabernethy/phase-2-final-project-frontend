@@ -10,7 +10,6 @@ function AddBook({onAddBook}){
 
     function handleSubmit(e) {
       e.preventDefault();
-      e.preventDefault();
       const bookData = {
         title: title,
         author: author,
