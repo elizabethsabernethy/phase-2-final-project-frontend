@@ -6,13 +6,12 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import AddBook from "./AddBook";
 import { BookContext } from "../context/BookContext";
+import { MyBooksContext } from "../context/MyBooksContext";
 
 function App(){
 
   const {books, setBooks} = useContext(BookContext);
-
-  const[myBooks, setMyBooks] = useState([])
-  // const[books, setBooks] = useState([])
+  const {myBooks, setMyBooks} = useContext(MyBooksContext);
 
   function onPickBook(myBook){
     setMyBooks([...myBooks, myBook])
