@@ -14,12 +14,6 @@ function App(){
   const[myBooks, setMyBooks] = useState([])
   // const[books, setBooks] = useState([])
 
-  useEffect(()=>{
-    fetch('http://localhost:3000/myBooks')
-    .then((resp)=> resp.json())
-    .then((myBooks)=> setMyBooks(myBooks))
-  },[])
-
   function onPickBook(myBook){
     setMyBooks([...myBooks, myBook])
   }
