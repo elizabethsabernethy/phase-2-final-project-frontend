@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PickedBooks from "./PickedBooks";
 import Filter from "./Filter";
 import Sort from "./Sort";
+import { BookContext } from "../context/BookContext";
 
-function MyBookList({onBookReturn, books, onRemoveMyBook}){
+function MyBookList({onBookReturn, onRemoveMyBook}){
+
+  const {books} = useContext(BookContext);
 
   const [filteredTitles, setFilteredTitles] = useState('')
   const [sortBy, setSortBy] = useState('Sort Books')

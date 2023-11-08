@@ -48,10 +48,10 @@ function App(){
     <NavBar />
       <Switch>
         <Route exact path="/picked">
-          <MyBookList onBookReturn={onBookReturn} books={myBooks} onRemoveMyBook={onRemoveMyBook}/>
+          <MyBookList onBookReturn={onBookReturn} onRemoveMyBook={onRemoveMyBook}/>
         </Route>
         <Route exact path="/collection">
-          <BookList books={books} setBooks={setBooks} onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
+          <BookList onPickBook={onPickBook} onRemoveBook={onRemoveBook}/>
         </Route>
         <Route exact path="/addBook">
           <AddBook onAddBook={onAddBook}/>
