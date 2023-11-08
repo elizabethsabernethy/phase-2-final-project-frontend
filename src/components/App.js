@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BookList from "./BookList";
 import MyBookList from "./MyBookList";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import AddBook from "./AddBook";
+import { BookContext } from "../context/BookContext";
 
 function App(){
 
-  const[myBooks, setMyBooks] = useState([])
-  const[books, setBooks] = useState([])
+  const {books, setBooks} = useContext(BookContext);
 
-  useEffect(()=>{
-      fetch('http://localhost:3000/books')
-      .then((resp)=> resp.json())
-      .then((books)=> setBooks(books))
-  },[])
+  const[myBooks, setMyBooks] = useState([])
+  // const[books, setBooks] = useState([])
 
   useEffect(()=>{
     fetch('http://localhost:3000/myBooks')
